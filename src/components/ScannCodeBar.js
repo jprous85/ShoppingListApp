@@ -14,6 +14,7 @@ class ScannCodeBar extends Component{
         <RNCamera
           ref={ref => {this.camera = ref}}
           style={styles.preview}
+          autoFocus={RNCamera.Constants.AutoFocus.on}
           onBarCodeRead={this.onBarCodeRead.bind(this)}
         >
           <View style={{
@@ -34,11 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black'
   },
   preview: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0
+    flex: 1
   },
 });
 
